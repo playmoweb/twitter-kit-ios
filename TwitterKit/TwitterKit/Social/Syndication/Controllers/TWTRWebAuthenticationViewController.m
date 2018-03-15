@@ -61,7 +61,7 @@
         // If TWTRSession exist, we use UIWeb flow that does force login. Otherwise, we don't have to
         NSDictionary *queryDict = @{TWTRAuthOAuthTokenKey: token, @"force_login": hasExistingSession ? @"true" : @"false"};
         _authURL = TWTRAPIURLWithParams(serviceConfig, TWTRTwitterAuthorizePath, queryDict);
-        _useWebFlow = hasExistingSession;
+        _useWebFlow = YES;
     }
     return self;
 }
